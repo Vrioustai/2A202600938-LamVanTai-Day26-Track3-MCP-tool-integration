@@ -179,3 +179,23 @@ Optional bonus:
 - add authentication for SSE or HTTP transport
 - support both SQLite and PostgreSQL with the same MCP surface
 - add richer output annotations or pagination
+
+## Setup and Demo Instructions
+
+### Setup
+1. Create a virtual environment: `python -m venv .venv` (or use your preferred method).
+2. Install dependencies: `pip install -r requirements.txt`
+3. Initialize the database: `python implementation/init_db.py`
+4. Run the automated tests: `pytest implementation/tests/test_server.py`
+
+### Demo Steps
+1. To start the MCP Inspector, run the provided helper script:
+   ```bash
+   .\start_inspector.bat
+   ```
+2. Navigate to the Inspector URL in your browser and test the `search`, `insert`, and `aggregate` tools, as well as the `schema://database` resource.
+3. For Gemini CLI / Antigravity integration, use:
+   ```bash
+   gemini mcp add sqlite-lab python /ABSOLUTE/PATH/TO/implementation/mcp_server.py --description "SQLite lab FastMCP server" --timeout 10000
+   ```
+   *(Ensure to replace `python` and the paths with absolute paths appropriate for your environment).*
